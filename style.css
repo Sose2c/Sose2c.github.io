@@ -1,0 +1,99 @@
+/* Základné nastavenia */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Čierne pozadie stránky */
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+}
+
+/* Horný červený panel */
+.main-header {
+    background-color: #c40000; /* Sýta červená */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Text v strede menu */
+.header-text h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+/* Skupiny tlačidiel na bokoch */
+.side-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Sivé "kapsulové" tlačidlá */
+.btn-gray {
+    background-color: #d1d1d1;
+    color: #1a1a1a;
+    width: 85px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.btn-gray:hover {
+    background-color: #ffffff;
+    transform: scale(1.08);
+}
+
+/* Štýlovanie stredového obrázka */
+.content-area {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.hero-container {
+    max-width: 600px; /* Šírka obrázka podľa potreby */
+    width: 100%;
+}
+
+.main-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    /* Voliteľné: jemná žiara okolo obrázka */
+    filter: drop-shadow(0 0 15px rgba(196, 0, 0, 0.3));
+}
+
+/* Prispôsobenie pre menšie mobily */
+@media (max-width: 650px) {
+    .main-header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    .side-buttons {
+        flex-direction: row;
+    }
+    .header-text h1 {
+        font-size: 1.3rem;
+        order: -1; /* Text bude na mobile prvý */
+    }
+}
