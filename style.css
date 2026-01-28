@@ -1,67 +1,70 @@
-/* Základné nastavenia */
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #000; /* Čierne pozadie stránky */
+    background-color: #000;
     font-family: 'Rajdhani', sans-serif;
     color: white;
 }
 
-/* Horný červený panel */
+/* Header */
 .main-header {
-    background-color: #c40000; /* Sýta červená */
+    background-color: #c40000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
-    border-bottom-left-radius: 45px;
-    border-bottom-right-radius: 45px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
-/* Text v strede menu */
+.header-text a {
+    text-decoration: none;
+    color: white;
+}
+
 .header-text h1 {
     text-align: center;
     text-transform: uppercase;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 0;
-    letter-spacing: 1px;
-    line-height: 1.2;
 }
 
-/* Skupiny tlačidiel na bokoch */
+/* Tlačidlá */
 .side-buttons {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
-/* Sivé "kapsulové" tlačidlá */
 .btn-gray {
     background-color: #d1d1d1;
     color: #1a1a1a;
-    width: 85px;
-    height: 45px;
+    width: 75px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     text-decoration: none;
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
+    font-size: 1.3rem;
+    transition: 0.3s;
 }
 
 .btn-gray:hover {
-    background-color: #ffffff;
-    transform: scale(1.08);
+    background-color: #fff;
+    transform: scale(1.05);
 }
 
-/* Štýlovanie stredového obrázka */
+/* Aktívne tlačidlo (aby si vedel, kde si) */
+.active {
+    border: 2px solid white;
+    background-color: #fff;
+}
+
+/* Obsah */
 .content-area {
     display: flex;
     justify-content: center;
@@ -69,31 +72,25 @@ body {
 }
 
 .hero-container {
-    max-width: 600px; /* Šírka obrázka podľa potreby */
+    max-width: 600px;
     width: 100%;
+    text-align: center;
 }
 
 .main-logo {
     width: 100%;
     height: auto;
-    display: block;
-    border-radius: 15px;
-    /* Voliteľné: jemná žiara okolo obrázka */
-    filter: drop-shadow(0 0 15px rgba(196, 0, 0, 0.3));
+    border-radius: 10px;
 }
 
-/* Prispôsobenie pre menšie mobily */
-@media (max-width: 650px) {
-    .main-header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-    .side-buttons {
-        flex-direction: row;
-    }
-    .header-text h1 {
-        font-size: 1.3rem;
-        order: -1; /* Text bude na mobile prvý */
-    }
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #c40000;
+    font-size: 2rem;
+}
+
+/* Mobilná verzia */
+@media (max-width: 600px) {
+    .main-header { flex-direction: column; gap: 15px; }
+    .side-buttons { flex-direction: row; }
 }
