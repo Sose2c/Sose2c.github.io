@@ -115,10 +115,9 @@ body {
 }
 .content-area {
     display: flex;
-    justify-content: center;
+    justify-content: column;
     align-items: center;
     padding: 80px 20px;
-    min-height: 80vh;
     background: radial-gradient(circle at center, rgba(196,0,0,0.2) 0%, #000 70%);
     position: relative;
 }
