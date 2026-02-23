@@ -185,6 +185,33 @@ body {
     pointer-events: none;
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    width: 30px;
+    height: 50px;
+    border: 2px solid red;
+    border-radius: 20px;
+}
+
+.scroll-indicator::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: red;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: scrollAnim 2s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { top: 10px; opacity: 1; }
+    100% { top: 30px; opacity: 0; }
+}
+
 /* Silnejší glow efekt */
 .main-logo {
     width: 100%;
