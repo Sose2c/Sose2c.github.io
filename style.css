@@ -212,6 +212,45 @@ body {
     100% { top: 30px; opacity: 0; }
 }
 
+body {
+    position: relative;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+/* Centrálny glow efekt, už máš */
+.glow-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0) 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+/* Vedľajší glow po strane */
+.glow-side {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.4) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(120px);
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Jemný pohyb vedľajšieho glow efektu */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+}
+
+
 /* Silnejší glow efekt */
 .main-logo {
     width: 100%;
