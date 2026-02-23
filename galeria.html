@@ -7,6 +7,56 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Štýly pre Lightbox (vyskakovacie okno) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 3px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            cursor: default;
+        }
+
+        #caption {
+            color: white;
+            margin-top: 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 24px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Pridáme kurzor ruky na fotky v galérii, aby bolo jasné, že sa na ne dá kliknúť */
+        .photo-item {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -61,5 +111,40 @@
             <div class="photo-item">
                 <img src="7.png" alt="Foto 7">
                   <div class="overlay">Miško pózuje</div>
-                
             </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Zväčšený obrázok">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const captionText = document.getElementById('caption');
+
+        // Funkcia na otvorenie fotky
+        document.querySelectorAll('.photo-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                const overlayText = item.querySelector('.overlay').textContent;
+                
+                lightbox.style.display = 'flex';
+                lightboxImg.src = imgSrc;
+                captionText.textContent = overlayText;
+            });
+        });
+
+        // Funkcia na zatvorenie (kliknutím na pozadie alebo X)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
