@@ -139,6 +139,49 @@ body {
     position: relative;
     z-index: 1;
 }
+/* ===== ANIMOVANÁ AURA POZADIA ===== */
+
+.content-area {
+    position: relative;
+    overflow: hidden;
+}
+
+.content-area::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,0,0,0.35) 0%, transparent 70%);
+    animation: pulse 6s infinite ease-in-out;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.6; }
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+}
+/* Dekoračné línie */
+
+.content-area::after {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, red, transparent);
+}
+body {
+    background-image: radial-gradient(rgba(255,0,0,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
 
 /* Silnejší glow efekt */
 .main-logo {
