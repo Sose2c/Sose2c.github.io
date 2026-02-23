@@ -61,4 +61,36 @@
             <div class="photo-item">
                 <img src="7.png" alt="Foto 7">
                   <div class="overlay">Miško pózuje</div>
+                
             </div>
+
+            
+            <!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+    const images = document.querySelectorAll(".photo-item img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    images.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = "none";
+        }
+    });
+</script>
