@@ -196,30 +196,4 @@ body {
     transform: scale(1.03);
     filter: drop-shadow(0 0 35px rgba(255, 0, 0, 0.8));
 }
-/* skry checkbox */
-.zoom-toggle {
-    display: none;
-}
 
-/* aby overlay neblokoval klik */
-.photo-item label {
-    cursor: pointer;
-    display: block;
-}
-
-/* základ obrázka */
-.photo-item img {
-    width: 100%;
-    transition: 0.3s ease;
-}
-
-/* keď je zaškrtnuté */
-.zoom-toggle:checked + label img {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.8);
-    z-index: 9999;
-    box-shadow: 0 0 60px black;
-    border-radius: 15px;
-}
