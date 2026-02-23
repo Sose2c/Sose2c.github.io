@@ -154,3 +154,19 @@ body {
     transform: scale(1.03);
     filter: drop-shadow(0 0 35px rgba(255, 0, 0, 0.8));
 }
+.photo-grid img {
+    width: 100%;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* keď je obrázok "targetnutý" */
+.photo-grid img:target {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.8);
+    z-index: 9999;
+    box-shadow: 0 0 40px black;
+    border-radius: 15px;
+}
