@@ -181,6 +181,16 @@ body {
     background-image: radial-gradient(rgba(255,0,0,0.15) 1px, transparent 1px);
     background-size: 40px 40px;
 }
+.background-text {
+    position: absolute;
+    font-size: 350px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.05);
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+}
 
 /* Silnejší glow efekt */
 .main-logo {
